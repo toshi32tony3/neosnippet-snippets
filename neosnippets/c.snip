@@ -54,13 +54,13 @@ snippet     switch
 abbr        switch () {}
     switch(${1:#:var})
     {
-      case ${2:#:val}:
-        ${0:TARGET}
-        break;
-      case ${3:#:val}:
-        break;
-      default;
-        break;
+	  case ${2:#:val}:
+	    ${0:TARGET}
+	    break;
+	  case ${3:#:val}:
+	    break;
+	  default;
+	    break;
     }
 
 snippet     function
@@ -94,11 +94,11 @@ abbr        enum {}
 
 # hard-tab is necessary; C indent doesn't support this.
 snippet main
-	int main(int argc, char *argv[])
-	{
+    int main(int argc, char *argv[])
+    {
 		${0:TARGET}
 		exit(EXIT_SUCCESS);
-	}
+    }
 
 # #include <...>
 snippet inc
@@ -114,7 +114,9 @@ alias   #ifndef
 abbr #ifndef ... #define ... #endif
     #ifndef $1
     #define ${1:#:SYMBOL}
-    #endif${0}
+
+    ${0}
+    #endif
 
 snippet def
 alias   #def, #define
@@ -126,7 +128,7 @@ abbr include-guard
     #ifndef ${1:SYMBOL}
     #define $1
 
-        ${0:TARGET}
+    ${0:TARGET}
     #endif /* end of include guard */
 
 # Ternary conditional operator
@@ -158,16 +160,16 @@ snippet helloworld
 
     int main(int argc, char *argv[])
     {
-        fprintf(stdout, "hello, world!\n");
+		fprintf(stdout, "hello, world!\n");${0:TARGET}
 
-        exit(EXIT_SUCCESS);
+		exit(EXIT_SUCCESS);
     }
 
 snippet fopen
 abbr fopen("...", "...");
     fopen("${1:PATH}", "${2:MODE}");
     ${0:TARGET}
-    fclose(${3:FD});
+	fclose(${3:FD});
 
 snippet fgets
 abbr fgets(row, length, file);

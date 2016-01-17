@@ -94,12 +94,11 @@ abbr        enum {}
 
 # hard-tab is necessary; C indent doesn't support this.
 snippet main
-    int main(int argc, char *argv[])
-    {
-        ${0:TARGET}
-
-        exit(EXIT_SUCCESS);
-    }
+	int main(int argc, char *argv[])
+	{
+		${0:TARGET}
+		exit(EXIT_SUCCESS);
+	}
 
 # #include <...>
 snippet inc

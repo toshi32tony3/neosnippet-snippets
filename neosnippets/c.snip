@@ -71,6 +71,11 @@ abbr        func() {}
         ${0:TARGET}
     }
 
+snippet     prottype
+alias       prot
+abbr        func();
+    ${1:void} ${2:#:func_name}(${3:#:args});${0}
+
 snippet     struct
 abbr        struct {}
     struct ${1:#:name}
